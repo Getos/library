@@ -31,7 +31,17 @@ body {
     width: 60%;
 }
 .displayBox{
+    display: flex;
+    flex-direction: column;
     background-color: grey;
     opacity: 80%;
     padding: 1rem; /* Optional: Add padding for better appearance */
+    align-content: center;
+}
+.removeBtn{
+    font-size: 12px;
+    padding: auto;
+    size: 2rem;
+    width: 80px;
+    height: 25px;
 }
