@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Norse-Bold';
+    src: url('./fonts/Norse-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Norse-Bold', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+   justify-content: space-between;
+}
+.leftSide{ 
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr  0.5fr;
+    grid-template-columns: 0.5fr  0.5fr  0.5fr;
+    gap: 1rem;
+    width: 40%;
+    background-image: url(https://img.freepik.com/free-photo/front-view-stacked-books-ladders-with-copy-space-education-day_23-2149241015.jpg?t=st=1718811179~exp=1718814779~hmac=d0199ff008beff9ef3db425c8a357c654bc5683bd1a08109b56db13bbc6193e0&w=360);
+    background-size: cover; /* Make sure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+.rightSide{
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 60%;
+}
+.displayBox{
+    background-color: grey;
+    opacity: 80%;
+    padding: 1rem; /* Optional: Add padding for better appearance */
+}
