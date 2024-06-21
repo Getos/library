@@ -23,15 +23,19 @@ function addBookToLibrary() {
 function render() {
     const libraryDiv = document.getElementById("library");
     libraryDiv.innerHTML = ""; // Clear previous content
-
+    //the dynamic card creation
     myLibrary.forEach((book, index) => {
         const bookCard = document.createElement("div");
         bookCard.classList.add("displayBox");
         const removeBtn = document.createElement("button")
         removeBtn.classList.add("removeBtn")
-        removeBtn.textContent="delete book"
-        bookCard.dataset.index = index; // Set dataset attribute
+        removeBtn.textContent = "delete book"
+        const checkBtn = document.createElement("button")
+        checkBtn.classList.add("checkBtn")
+        checkBtn.textContent="read or unread"
+        bookCard.dataset.index = index; // Set dataset attribute for card
         removeBtn.dataset.index = index;
+        checkBtn.dataset.index = index;// set dataset for the button
         bookCard.innerHTML = `
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
@@ -39,9 +43,14 @@ function render() {
             <p>Read: ${book.readCheck ? "Yes" : "No"}</p>
         `;
         bookCard.appendChild(removeBtn);
+        bookCard.appendChild(checkBtn);
         libraryDiv.appendChild(bookCard);
+        //used this since there is no inital button if i used plain queryselector
         document.querySelectorAll('.removeBtn').forEach(btn => {
             btn.addEventListener('click', deleteCard);
+        })
+        document.querySelectorAll('.checkBtn').forEach(btn => {
+            btn.addEventListener('click', changeRead);
         })
     });
 }
@@ -55,10 +64,15 @@ function closeDialog() {
     const dialog = document.querySelector('#bookDialog');
     dialog.close();
 }
+function changeRead(event) {
+    const index = event.target.dataset.index
+    myLibrary[index].readCheck  = !myLibrary[index].readCheck;
+    render(); 
+}
 function deleteCard(event) {
     const index = event.target.dataset.index; // Get the index from the clicked delete button
-    myLibrary.splice(index, 1); // Remove the book from myLibrary array
-    render(); // Re-render the library to update the display
+    myLibrary.splice(index, 1); 
+    render(); 
 }
 
 document.querySelector('#showDialogBtn').addEventListener('click', showDialog);
