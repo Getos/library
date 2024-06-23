@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="emailValidation.js" defer></script>
+    <script src="passwordValidation.js" defer></script>
+    <title>Register</title>
+</head>
+<body>
+    <div class="rightSide">
+        <a href="./index.html" class="btnRegister">back to library</a>
+    </div>
+<section class="container2"> Register as a new user
+    <form class="inputContainer" novalidate>
+        <p>
+        <div class="input-label">
+        <label for="mail">email</label>
+        <input type="email" id="mail" name="mail" required minlength="8">
+        <span class="error" aria-live="polite"></span>
+        </div>
+         <div class="input-label">
+        <label for="country">country</label>
+        <input type="text" class="country">
+         </div>
+         <div class="input-label">
+        <label for="password">password</label>
+        <input type="password" id="password" required minlength="8">
+        <span class="error" id="passwordError">Invalid password.</span> 
+         </div>        
+          <div class="input-label">
+            <label for="repeatPassword">repeat Password</label>   
+        <input type="password" id="repeatPassword" required minlength="8">
+        <span class="error" id="repeatPasswordError">Passwords do not match.</span>
+          </div>
+        </p>
+        <button>Submit</button>
+      </form>    
+</form>
+</section>
+</body>
+</html>
