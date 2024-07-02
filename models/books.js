@@ -17,6 +17,6 @@ BookSchema.virtual("url").get(function () {
 });
 
 // Export model
-Book = mongoose.model("Book", BookSchema);
+const Book = mongoose.model("Book", BookSchema);
 
 export default Book;

@@ -22,5 +22,5 @@ BookInstanceSchema.virtual("url").get(function () {
 });
 
 // Export model
-BookInstance = mongoose.model("BookInstance", BookInstanceSchema);
-export default BookInstanceSchema;
+const BookInstance = mongoose.model("BookInstance", BookInstanceSchema);
+export default BookInstance;
